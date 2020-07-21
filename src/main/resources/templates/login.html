@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset='utf-8'>
+    <meta name = "veiwport" content="width=device-width, initial-scale=1">
+    <title>
+        E-Pass Login Form
+    </title>
+    <style>
+            body {
+                background-color: peachpuff;
+            }
+            h1 {
+                text-align: center;
+                font-size: 50px;
+                color: slateblue;
+            }
+            input{
+                padding: 10px;
+                font-size: inherit;
+            }
+            form{
+                margin: 30px auto;
+                width: 300px;
+                color: seashell;
+            }
+            input[type="tel"] {
+                display: block;
+                margin-bottom: 25px;
+                width: 100%;
+                border: 2px solid slategray;
+            }
+            input[type="password"] {
+                display: block;
+                margin-bottom: 25px;
+                width: 100%;
+                border: 2px solid slategray;
+            }
+            input[type = "submit"] {
+                width: 344px;
+                height: 45px;
+                border: none;
+                background: sandybrown;
+                color: black;
+            }
+            input:focus {
+                background: turquoise;
+            }
+            button {
+                background-color: #4CAF50;
+                color: white;
+                padding: 14px 20px;
+                margin: 8px 0;
+                border: none;
+                cursor: pointer;
+                width: 344px;
+                opacity: 0.65;
+            }
+
+            button:hover {
+                opacity:1;
+            }
+
+        </style>
+    <!--<link rel="stylesheet" type = "text/css" href="style.css">-->
+</head>
+
+<body>
+<h1>Login Form</h1>
+<form action="#" th:action="@{/login}" th:object="${login}" method="post">
+
+    <input type="tel" id="pnumber" name="pnumber" th:field="*{pnumber}" placeholder="Enter phone number" required>
+    <input type="password" id="password" name="password" th:field="*{password}" placeholder="Enter password" required>
+
+    <input type="submit" id="submit" value="Submit">
+</form>
+</body>
+<html>

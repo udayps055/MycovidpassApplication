@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset='utf-8'>
+    <meta name = "veiwport" content="width=device-width, initial-scale=1">
+    <title>
+        E-Pass Registration Form
+    </title>
+    <style>
+            body {
+                background-color: peachpuff;
+            }
+            h1 {
+                text-align: center;
+                font-size: 50px;
+                color: slateblue;
+            }
+
+            form{
+                margin: 30px auto;
+                width: 300px;
+                color: seashell;
+            }
+
+            input{
+                padding: 10px;
+                font-size: inherit;
+            }
+            input[type="text"] {
+                display: block;
+                margin-bottom: 25px;
+                width: 100%;
+                border: 2px solid slategray;
+            }
+            input[type="password"] {
+                display: block;
+                margin-bottom: 25px;
+                width: 100%;
+                border: 2px solid slategray;
+            }
+            input[type="email"] {
+                display: block;
+                margin-bottom: 25px;
+                width: 100%;
+                border: 2px solid slategray;
+            }
+            input[type="tel"] {
+                display: block;
+                margin-bottom: 25px;
+                width: 100%;
+                border: 2px solid slategray;
+            }
+
+            input[type = "radio"] {
+                margin: 0 8px 25px 18px;
+            }
+            #radio {
+                color: black;
+            }
+            input[type = "radio"]:first-child {
+                margin-left: 0;
+            }
+
+            input[type = "submit"] {
+                width: 344px;
+                height: 45px;
+                border: none;
+                background: sandybrown;
+                color: black;
+            }
+
+            input:focus {
+                background: turquoise;
+            }
+            input[type = "radio"] :checked + label {
+                font-weight: bold;
+                font-size: 18px;
+            }
+
+
+            button {
+                background-color: #4CAF50;
+                color: white;
+                padding: 14px 20px;
+                margin: 8px 0;
+                border: none;
+                cursor: pointer;
+                width: 344px;
+                opacity: 0.65;
+            }
+
+            button:hover {
+                opacity:1;
+            }
+
+        </style>
+    <!--<link rel="stylesheet" type = "text/css" href="style.css">-->
+</head>
+
+<body>
+<h1>Registration Form</h1>
+<form action="#" th:action="@{/register}" th:object="${register}" method="post">
+
+    <input type="text" id="fname" name="fname" th:field="*{fname}" placeholder="Enter first name" required>
+    <input type="text" id="lname" name="lname" th:field="*{lname}" placeholder="Enter last name" required>
+    <input type="email" id="email" name="email" th:field="*{email}" placeholder="Enter Email" required>
+    <input type="password" id="password" name="password" th:field="*{password}" placeholder="Enter password" required>
+    <input type="password" id="cpassword" name="cpassword" th:field="*{cpassword}" placeholder="Enter password again" required>
+    <input type="tel" id="pnumber" name="pnumber" th:field="*{pnumber}" placeholder="Enter phone number" required>
+
+    <div id = "radio">
+        <input type="radio" id = "male" name="gender"><label for="male">Male</label>
+        <input type="radio" id = "female" name="gender"><label for="female">Female</label>
+    </div>
+
+    <input type="submit" id="submit" value="Submit">
+
+
+</form>
+</body>
+<html>
