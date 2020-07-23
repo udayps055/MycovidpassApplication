@@ -15,15 +15,4 @@ public class MycovidpassApplication {
 		SpringApplication.run(MycovidpassApplication.class, args);
 		//System.out.println("123");
 	}
-	@Bean
-	public CommandLineRunner demo(UserRepo reposi) {
-		return (args) -> {
-			// fetch an individual customer by ID
-			d2 custo = reposi.findById(1L);
-			log.info("Customer found with findById(1L):");
-			log.info("--------------------------------");
-			log.info(custo.toString());
-			log.info("");
-		};
-	}
 }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="https://www.thymeleaf.org">
 <head>
     <title>
         Costom select box
@@ -67,15 +67,24 @@
 <body>
 
 <h1 style="text-align: center; font-size: 50px;"> Choose Your Source And Destination </h1>
-
+<form action="#" th:action="@{/result}" th:object="${result}" method="post">
 <div class = "box">
     <select>
 
-        <option>option 1</option>
-        <option>option 2</option>
-        <option>option 3</option>
-        <option>option 4</option>
-        <option>option 5</option>
+        <option>Select</option>
+        <option>KOLKATA</option>
+        <option>DELHI</option>
+        <option>PATNA</option>
+        <option>RANCHI</option>
+        <option>MUMBAI</option>
+        <option>PUNE</option>
+        <option>BENGALURU</option>
+        <option>CHENNAI</option>
+        <option>VARANASI</option>
+        <option>GOA</option>
+        <option>CHANDIGRAH</option>
+        <option>JAIPUR</option>
+        <option>MYSORE</option>
 
     </select>
 </div>
@@ -83,14 +92,24 @@
 <div class = "box1">
     <select>
 
-        <option>option 1</option>
-        <option>option 2</option>
-        <option>option 3</option>
-        <option>option 4</option>
-        <option>option 5</option>
+        <option>Select</option>
+        <option>KOLKATA</option>
+        <option>DELHI</option>
+        <option>PATNA</option>
+        <option>RANCHI</option>
+        <option>MUMBAI</option>
+        <option>PUNE</option>
+        <option>BENGALURU</option>
+        <option>CHENNAI</option>
+        <option>VARANASI</option>
+        <option>GOA</option>
+        <option>CHANDIGRAH</option>
+        <option>JAIPUR</option>
+        <option>MYSORE</option>
 
     </select>
 </div>
-<input type="submit" name = "Submit">
+    <input type="submit" name = "Submit">
+</form>
 </body>
 </html>

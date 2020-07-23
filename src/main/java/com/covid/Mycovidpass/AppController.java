@@ -34,7 +34,6 @@ public class AppController {
             n.setPassword(password);
             n.setPnumber(pnumber);
             userRepo.save(n);
-            System.out.println(fname + ' ' + lname + ' ' + email + ' ' + password + ' ' + cpassword + ' ' + pnumber);
             return "redirect:/login";
         }
     }
@@ -47,19 +46,39 @@ public class AppController {
     @PostMapping("/login")
     public String getlogin(@RequestParam("pnumber") String pnumber,
                            @RequestParam("password") String password, HttpServletRequest req) {
+
+        d2 obj = userRepo.findById(Long.parseLong(pnumber));
+        if (obj.getPassword().equals(password)) {
+            return "redirect:/main";
+        }
+        else {
+            return "redirect:/login";
+        }
+        /*System.out.println(obj.getPassword().equals(password));
         System.out.println(password + ' ' + pnumber);
-        return "redirect:/main";
+        return "redirect:/main";*/
     }
     @GetMapping("/result")
     public String getres(Model model) {
         return "result";
     }
+
     @PostMapping("/result")
     public String rediuse(HttpServletRequest req) {
         return "redirect:/register";
     }
-    @GetMapping("main")
+
+    @GetMapping("/main")
     public String getmain(Model model) {
+        model.addAttribute("main", new d4());
         return "main";
+    }
+
+    @PostMapping("/main")
+    @ResponseBody
+    public String getdets(@RequestParam("source") String source,
+                          @RequestParam("destination") String destination, HttpServletRequest req) {
+        System.out.println(source + ' ' + destination);
+        return "OK";
     }
 }

@@ -12,20 +12,6 @@
                 font-size: 50px;
                 color: slateblue;
             }
-        button {
-                background-color: #4CAF50;
-                color: white;
-                padding: 14px 20px;
-                margin: 8px 0;
-                border: none;
-                cursor: pointer;
-                width: 344px;
-                opacity: 0.65;
-            }
-
-            button:hover {
-                opacity:1;
-            }
             input[type = "submit"] {
                 width: 344px;
                 height: 45px;
@@ -44,7 +30,7 @@
 <body>
 <h1>PASSWORDS MISMATCHED</h1>
 <form action="#" th:action="@{/result}" th:object="${result}" method="post">
-    <input type="submit" id="submit" value="Submit">
+    <input type="submit" id="submit" value="Registration Form">
 </form>
 </body>
 </html>
