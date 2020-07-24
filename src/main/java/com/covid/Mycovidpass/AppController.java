@@ -78,7 +78,13 @@ public class AppController {
     @ResponseBody
     public String getdets(@RequestParam("source") String source,
                           @RequestParam("destination") String destination, HttpServletRequest req) {
-        System.out.println(source + ' ' + destination);
-        return "OK";
+        if (source.equals(destination)) {
+            return "SAME SOURCE AND DESTINATION NOT ALLOWED";
+        }
+        else {
+            return "OK";
+        }
+        //System.out.println(source + ' ' + destination);
+        //return "OK";
     }
 }
