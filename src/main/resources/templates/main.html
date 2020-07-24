@@ -67,49 +67,46 @@
 <body>
 
 <h1 style="text-align: center; font-size: 50px;"> Choose Your Source And Destination </h1>
-<form action="#" th:action="@{/result}" th:object="${result}" method="post">
-<div class = "box">
-    <select>
+<form action="#" th:action="@{/main}" th:object="${main}" method="post">
+    <div class = "box">
+        <select th:field="*{source}">
 
-        <option>Select</option>
-        <option>KOLKATA</option>
-        <option>DELHI</option>
-        <option>PATNA</option>
-        <option>RANCHI</option>
-        <option>MUMBAI</option>
-        <option>PUNE</option>
-        <option>BENGALURU</option>
-        <option>CHENNAI</option>
-        <option>VARANASI</option>
-        <option>GOA</option>
-        <option>CHANDIGRAH</option>
-        <option>JAIPUR</option>
-        <option>MYSORE</option>
+            <option th:value="select">Select</option>
+            <option th:value="KOLKATA">KOLKATA</option>
+            <option th:value="DELHI">DELHI</option>
+            <option th:value="PATNA">PATNA</option>
+            <option th:value="RANCHI">RANCHI</option>
+            <option th:value="MUMBAI">MUMBAI</option>
+            <option th:value="PUNE">PUNE</option>
+            <option th:value="BANGALURU">BENGALURU</option>
+            <option th:value="CHENNAI">CHENNAI</option>
+            <option th:value="VARANASI">VARANASI</option>
+            <option th:value="GOA">GOA</option>
+            <option th:value="JAIPUR">JAIPUR</option>
+            <option th:value="MYSORE">MYSORE</option>
+        </select>
+    </div>
 
-    </select>
-</div>
+    <div class = "box1">
+        <select  th:field="*{destination}">
 
-<div class = "box1">
-    <select>
+            <option th:value="select">Select</option>
+            <option th:value="KOLKATA">KOLKATA</option>
+            <option th:value="DELHI">DELHI</option>
+            <option th:value="PATNA">PATNA</option>
+            <option th:value="RANCHI">RANCHI</option>
+            <option th:value="MUMBAI">MUMBAI</option>
+            <option th:value="PUNE">PUNE</option>
+            <option th:value="BANGALURU">BENGALURU</option>
+            <option th:value="CHENNAI">CHENNAI</option>
+            <option th:value="VARANASI">VARANASI</option>
+            <option th:value="GOA">GOA</option>
+            <option th:value="JAIPUR">JAIPUR</option>
+            <option th:value="MYSORE">MYSORE</option>
 
-        <option>Select</option>
-        <option>KOLKATA</option>
-        <option>DELHI</option>
-        <option>PATNA</option>
-        <option>RANCHI</option>
-        <option>MUMBAI</option>
-        <option>PUNE</option>
-        <option>BENGALURU</option>
-        <option>CHENNAI</option>
-        <option>VARANASI</option>
-        <option>GOA</option>
-        <option>CHANDIGRAH</option>
-        <option>JAIPUR</option>
-        <option>MYSORE</option>
-
-    </select>
-</div>
-    <input type="submit" name = "Submit">
+        </select>
+    </div>
+    <input type="submit" id="submit" value="Submit">
 </form>
 </body>
 </html>
